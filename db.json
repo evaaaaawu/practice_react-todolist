@@ -17,13 +17,8 @@
     },
     {
       "title": "Learn to implement auth",
-      "isDone": false,
+      "isDone": true,
       "id": 4
-    },
-    {
-      "title": "Learn react",
-      "isDone": false,
-      "id": 5
     }
   ]
 }
