@@ -139,7 +139,7 @@ const TodoPage = () => {
         onChangeMode={handleChangeMode}
         onDelete={handleDelete}
       />
-      <Footer />
+      <Footer todosRemained={todos.length} />
     </div>
   );
 };
