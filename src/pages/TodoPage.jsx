@@ -109,8 +109,6 @@ const TodoPage = () => {
   };
 
   const handleSave = async ({ id, title }) => {
-    const currentTodo = todos.find((todo) => todo.id === id);
-
     try {
       await patchTodo({
         id,
