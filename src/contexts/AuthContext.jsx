@@ -2,6 +2,7 @@ import { login, register, checkPermission } from 'api/auth';
 import { createContext, useState, useEffect } from 'react';
 import * as jwt from 'jsonwebtoken';
 import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
 
 const defaultAuthContext = {
   isAuthenticated: false,
@@ -12,7 +13,7 @@ const defaultAuthContext = {
 };
 
 const AuthContext = createContext(defaultAuthContext);
-
+export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [payload, setPayload] = useState(null);
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
     checkTokenIsValid();
   }, [pathname]);
-  
+
   return (
     <AuthContext.Provider
       value={{
