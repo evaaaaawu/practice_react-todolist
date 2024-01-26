@@ -3,10 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HomePage, LoginPage, SignUpPage, TodoPage } from 'pages';
 import { AuthProvider } from 'contexts/AuthContext';
 
+// 設定網址正確性
+const basename = process.env.PUBLIC_URL;
+
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <AuthProvider>
           <Routes>
             <Route path="todos" element={<TodoPage />} />
